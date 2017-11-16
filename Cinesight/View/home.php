@@ -1,9 +1,6 @@
 <?php include('View/header.php'); ?>
 
 <div id="podcast">
-    <?php if(isset($_SESSION['user'])) {
-        echo "Welcome ".$_SESSION['user']."!";
-    }; ?>
     <section id="podcastPlayer">
         <?php
         if (isset($selectedPodcast)) {
@@ -13,10 +10,12 @@
     </section>
 </div>
 
+<?php if(isset($_SESSION['userRole']) && $_SESSION['userRole'] === "Admin"):?>
 <form action='index.php' method ='POST'>
     <input type='submit' value='Add a podcast'>
     <input type='hidden' name='action' value='addPodcast'>
 </form>
+<?php endif;?>
 
 <form action ="index.php" method='POST'>
     <input type='submit' value='Login'>
@@ -26,7 +25,6 @@
  <div id="podcasts">   
 <?php podcast::printPodcasts($allPodcasts)?>
  </div>
-</section>
 
 
 <?php include('View/footer.php'); ?>

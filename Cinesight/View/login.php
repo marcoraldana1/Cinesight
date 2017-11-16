@@ -8,7 +8,7 @@
         <input type='text' name='username'><br><br>
         
         <label>Password: </label>
-        <input type='password' name='password'>
+        <input type='password' name='password'><br><br>
         
         <input type='submit' value="Login">
         <input type="hidden" name="action" value="checkLogin">
