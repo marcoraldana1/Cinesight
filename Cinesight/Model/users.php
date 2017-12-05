@@ -70,6 +70,7 @@ class users {
     function SetUserRole($role) {
         $this->role = $role;
     }
+    
 
 
 

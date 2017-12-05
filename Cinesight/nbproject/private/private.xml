@@ -1,17 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2">
+        <file>
+            <url>View/home.php</url>
+            <bookmark id="1">
+                <name/>
+                <line>1</line>
+                <key/>
+            </bookmark>
+        </file>
+        <file>
+            <url>Model/Validation.php</url>
+            <bookmark id="2">
+                <name/>
+                <line>58</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/xampp/htdocs/Cinesight/View/main.css</file>
-            <file>file:/C:/xampp/htdocs/Cinesight/Model/upload.php</file>
             <file>file:/C:/xampp/htdocs/Cinesight/View/header.php</file>
-            <file>file:/C:/xampp/htdocs/Cinesight/Model/podcast.php</file>
-            <file>file:/C:/xampp/htdocs/Cinesight/View/home.php</file>
+            <file>file:/C:/xampp/htdocs/Cinesight/View/allReviews.php</file>
+            <file>file:/C:/xampp/htdocs/Cinesight/View/allPodcasts.php</file>
+            <file>file:/C:/xampp/htdocs/Cinesight/Model/reviewsDB.php</file>
             <file>file:/C:/xampp/htdocs/Cinesight/index.php</file>
-            <file>file:/C:/xampp/htdocs/Cinesight/View/addPodcast.php</file>
             <file>file:/C:/xampp/htdocs/Cinesight/Model/podcastDB.php</file>
-            <file>file:/C:/xampp/htdocs/Cinesight/View/footer.php</file>
+            <file>file:/C:/xampp/htdocs/Cinesight/View/uploadConfirmation.php</file>
         </group>
     </open-files>
 </project-private>

@@ -1,5 +1,5 @@
 <?php
-
+ //admin: movieLife
 class userDB {
 
     function saveUser($firstName, $lastName, $userName, $emailAddress, $password, $favMovie, $role) {
@@ -28,13 +28,10 @@ class userDB {
 
         $query = 'Select * From users 
                 Where
-                userAlias = :userName 
-                AND
-                userPassword = :password';
+                userAlias = :userName';
 
         $statement = $db->prepare($query);
         $statement->bindValue(':userName', $userName);
-        $statement->bindValue(':password', $password);
 
         $statement->execute();
 
@@ -44,7 +41,12 @@ class userDB {
         if (count($currentUser) === 0) {
             $currentUser = NULL;
             return $currentUser;
-        } else {
+        } 
+        else if(!password_verify($password, $currentUser[0]['userPassword'])){
+            $currentUser = NULL;
+            return $currentUser;
+        }
+        else {
             $foundUser = new users();
             
             $foundUser->SetFirstName($currentUser[0]['userFirstName']);

@@ -4,14 +4,13 @@
 class podcast {
 
     public $podcastID, $podcastName, $releaseDate, $reviewedBy,
-            $runtimeMins, $runtimeHours, $genre, $airDate, $imageName, $audioName;
+            $runtimeHours, $genre, $airDate, $imageName, $audioName;
 
-    function __construct($podcastID, $podcastName, $releaseDate, $reviewedBy,  $runtimeMins, $runtimeHours, $genre, $airDate, $imageName, $audioName) {
+    function __construct($podcastID, $podcastName, $releaseDate, $reviewedBy,  $runtimeHours, $genre, $airDate, $imageName, $audioName) {
         $this->podcastID = $podcastID;
         $this->podcastName = $podcastName;
         $this->releaseDate = $releaseDate;
         $this->reviewedBy = $reviewedBy;
-        $this->runtimeMins = $runtimeMins;
         $this->runtimeHours = $runtimeHours;
         $this->genre = $genre;
         $this->airDate = $airDate;
@@ -30,9 +29,6 @@ class podcast {
     function getReviewedBy() {
         return $this->reviewedBy;
     }
-     function getRuntimeMins() {
-         return $this->runtimeMins;
-     }
      
      function getRuntimeHours() {
          return $this->runtimeHours;
@@ -65,14 +61,13 @@ class podcast {
         $podcastName = filter_input(INPUT_POST, 'podcastName');
         $releaseDate = filter_input(INPUT_POST, 'releaseDate');
         $reviewedBy = filter_input(INPUT_POST, 'reviewedBy');
-        $runtimeMins = filter_input(INPUT_POST, 'runtimeMins');
         $runtimeHours= filter_input(INPUT_POST, 'runtimeHours');
         $genre = filter_input(INPUT_POST, 'genre');
         $airDate = filter_input(INPUT_POST, 'airDate');
         $imageName = $_FILES['image']['name'];
         
         podcastDB::savePodcast($podcastName, $releaseDate, $reviewedBy,
-                $runtimeMins, $runtimeHours, $genre, $airDate, $imageName);
+                $runtimeHours, $genre, $airDate, $imageName);
     }
     
     function printPodcasts($allPodcasts) {
@@ -88,7 +83,7 @@ class podcast {
                     echo "<h1>".$selectedPodcast->getPodcastName()."<br>"
                     . "Released On: ".$selectedPodcast->getReleaseDate()."<br>"
                     . "Reviewed By: ".$selectedPodcast->getReviewedBy()."<br>"
-                    . "Runtime: ".$selectedPodcast->getRuntimeMins()." mins / ".$selectedPodcast->getRuntimeHours()."<br></h1>"
+                    . "Runtime: ".$selectedPodcast->getRuntimeHours()."<br></h1>"
                     . "<audio controls><source src='podcasts/audio/".$selectedPodcast->getAudioName()." ' type='audio/mp3'></audio>"
                     . "<img src='images/" . $selectedPodcast->getImageName() . " ' width='205' height='275'>";
     }

@@ -49,6 +49,26 @@ class Upload {
                 echo "nothing";
             }
         }
+        
+    }
+    
+    function uploadReviewImage() {
+        if($_FILES['reviewImage']['type'] === 'image/jpeg' || $_FILES['reviewImage']['type'] === "image/png") {
+            $cwd = getcwd();
+            
+            $path = $cwd.DIRECTORY_SEPARATOR."reviewImages";
+            $tmp_name = $_FILES['reviewImage']['tmp_name'];
+            $name = $path.DIRECTORY_SEPARATOR.$_FILES['reviewImage']['name'];
+            
+            $success = move_uploaded_file($tmp_name, $name);
+            
+            if($success) {
+                reviewsDB::saveImageFile($_FILES["reviewImage"]["name"], $_FILES["reviewImage"]["type"], $name);
+                return;
+        }else
+            $errorMessage = "Error uploading Image";
+            include('View/addReviewInfo.php');
+        }
     }
 
 }
